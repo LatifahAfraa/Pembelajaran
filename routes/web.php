@@ -30,9 +30,9 @@ Route::get('/', function () {
 // require __DIR__.'/auth.php';
 Route::get('/',[LoginController::class, 'index'])->name('index');
 Route::post('/login',[LoginController::class, 'proses'])->name('login');
-Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
-Route::get('/dashboard', [Dashboardcontroller::class, 'dashboard'])->name('dashboard');
+Route::middleware(['login'])->group(function () {
+    Route::get('/dashboard', [Dashboardcontroller::class, 'dashboard'])->name('dashboard');
 
 Route::get('admin', [AdminController::class, 'admin'])->name('admin');
 Route::get('admin/create', [AdminController::class, 'createadmin'])->name('createAdmin');
@@ -61,6 +61,11 @@ Route::post('mahasiswa/tambah', [MahasiswaController::class, 'tambah'])->name('t
 Route::get('mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('editmahasiswa');
 Route::post('mahasiswa/proses{id}', [MahasiswaController::class, 'proses'])->name('prosesmahasiswa');
 Route::get('mahasiswa/delete{id}', [MahasiswaController::class, 'hapus'])->name('hapusmahasiswa');
+
+
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
+
+});
 
 
 // ----
