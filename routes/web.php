@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Dashboardcontroller;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
 
 /*
@@ -27,8 +28,11 @@ Route::get('/', function () {
 // })->middleware(['auth'])->name('dashboard');
 
 // require __DIR__.'/auth.php';
+Route::get('/',[LoginController::class, 'index'])->name('index');
+Route::post('/login',[LoginController::class, 'proses'])->name('login');
+Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
-Route::get('/', [Dashboardcontroller::class, 'dashboard'])->name('dashboard');
+Route::get('/dashboard', [Dashboardcontroller::class, 'dashboard'])->name('dashboard');
 
 Route::get('admin', [AdminController::class, 'admin'])->name('admin');
 Route::get('admin/create', [AdminController::class, 'createadmin'])->name('createAdmin');
@@ -57,5 +61,8 @@ Route::post('mahasiswa/tambah', [MahasiswaController::class, 'tambah'])->name('t
 Route::get('mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('editmahasiswa');
 Route::post('mahasiswa/proses{id}', [MahasiswaController::class, 'proses'])->name('prosesmahasiswa');
 Route::get('mahasiswa/delete{id}', [MahasiswaController::class, 'hapus'])->name('hapusmahasiswa');
+
+
+// ----
 
 // Route::any('admin/password', [AdminController::class, 'hash_password']);
