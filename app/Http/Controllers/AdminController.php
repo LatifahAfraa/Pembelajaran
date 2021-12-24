@@ -71,7 +71,6 @@ class AdminController extends Controller
             'alamat_admin'=>$request->alamat_admin,
             'nohp_admin'=>$request->nohp_admin,
             'email_admin'=>$request->email_admin,
-            'password_admin'=> Hash::make($request->password_admin),
             'foto_admin'=>$nama_file
         ];
         DB::table('admin')->where('id_admin', $id)->update($data);
