@@ -1,12 +1,16 @@
 <?php
 
+use App\Http\Controllers\AbsensiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Dashboardcontroller;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\KelompokController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\TugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +66,18 @@ Route::get('mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('e
 Route::post('mahasiswa/proses{id}', [MahasiswaController::class, 'proses'])->name('prosesmahasiswa');
 Route::get('mahasiswa/delete{id}', [MahasiswaController::class, 'hapus'])->name('hapusmahasiswa');
 
+
+Route::get('materi',[MateriController::class, 'index'])->name('materi');
+Route::get('meteri/delete{id}', [MateriController::class, 'hapus'])->name('hapusmateri');
+
+Route::get('kelompok',[KelompokController::class, 'index'])->name('kelompok');
+Route::get('kelompok/delete{id}',[KelompokController::class, 'hapus'])->name('hapuskelompok');
+
+Route::get('tugas', [TugasController::class, 'index'])->name('tugas');
+Route::get('tugas/delete{id}',[TugasController::class, 'hapus'])->name('hapustugas');
+
+Route::get('absensi', [AbsensiController::class, 'index'])->name('absensi');
+Route::get('absensi/delete{id}',[AbsensiController::class, 'hapus'])->name('hapusabsensi');
 
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 

@@ -97,7 +97,7 @@
 
           <li class="nav-item has-treeview">
             <a href="{{ route('dosen') }}" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-user-tie"></i>
               <p>
                 Dosen
               </p>
@@ -109,6 +109,42 @@
               <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Mahasiswa
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('materi') }}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Materi
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('kelompok') }}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Kelompok
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('tugas') }}" class="nav-link">
+              <i class="nav-icon fas fa-folder-open"></i>
+              <p>
+                Tugas
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="{{ route('absensi') }}" class="nav-link">
+              <i class="nav-icon fas fa-calendar-alt"></i>
+              <p>
+                Absensi
               </p>
             </a>
           </li>
@@ -154,6 +190,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template/') }}/dist/js/demo.js"></script>
 
+
+<script src="{{ asset('template/') }}/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="{{ asset('template/') }}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{ asset('template/') }}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{ asset('template/') }}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@stack('js')
 </body>
 </html>
