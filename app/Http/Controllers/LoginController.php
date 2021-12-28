@@ -23,7 +23,7 @@ class LoginController extends Controller
             //buat session
             $request->session()->put('id_admin', $data->id_admin);
             $request->session()->put('nohp_admin', $data->nohp_admin);
-            $request->session()->put('nama', $data->nama);
+            $request->session()->put('nama_admin', $data->nama_admin);
 
             return redirect()->route('dashboard');
         } else {
@@ -40,7 +40,7 @@ class LoginController extends Controller
     {
         $request->session()->forget('id_admin');
         $request->session()->forget('nohp_admin');
-        $request->session()->forget('nama');
+        $request->session()->forget('nama_admin');
         return redirect()->route('index');
     }
 
