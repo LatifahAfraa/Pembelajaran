@@ -40,7 +40,7 @@ class LoginController extends Controller
     {
         $request->session()->forget('id_admin');
         $request->session()->forget('nohp_admin');
-        $request->session()->('nama');
+        $request->session()->forget('nama');
         return redirect()->route('index');
     }
 
