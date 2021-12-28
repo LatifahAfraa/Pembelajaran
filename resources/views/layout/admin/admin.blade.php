@@ -32,7 +32,7 @@
                   <a href="{{ route('createAdmin') }}" class="btn btn-primary" role="button" title="Tambah Data"><i class="fa fa-plus"></i>Tambah Admin</a>
 
                   <div class="table-responsive">
-                      <table id="example" class="table table-bordered table-striped">
+                      <table id="example2" class="table table-bordered table-striped">
                         <thead>
                         <tr>
                           <th>No</th>
@@ -96,3 +96,22 @@
   </div>
 
 @endsection
+@push('js')
+    <script>
+        $(function () {
+
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": true,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+
+            $('#example2_filter').addClass("float-right")
+            $('#example2_paginate').addClass("float-right")
+        })
+    </script>
+@endpush
