@@ -20,6 +20,7 @@ class LoginController extends Controller
      if ($data != null) {
         if (Hash::check($request->password_admin, $data->password_admin)) {
 
+            // dd($data->nama_admin);
             //buat session
             $request->session()->put('id_admin', $data->id_admin);
             $request->session()->put('nohp_admin', $data->nohp_admin);

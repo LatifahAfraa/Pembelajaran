@@ -24,6 +24,7 @@
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
+
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -58,7 +59,7 @@
           <img src="https://w7.pngwing.com/pngs/306/70/png-transparent-computer-icons-management-admin-silhouette-black-and-white-neck.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="" class="d-block">{{ request()->session('nama_admin') }}</a>
+          <a href="" class="d-block">{{ request()->session()->get('nama_admin') }}</a>
         </div>
       </div>
 
