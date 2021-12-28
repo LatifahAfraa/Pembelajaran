@@ -32,7 +32,7 @@
                             <div class="card-body">
 
                                 <center>
-                                    <h2>From Tambah Dosen</h2>
+                                    <h2>Form Tambah Dosen</h2>
                                 </center>
                                 <form action="{{ route('tambahdosen') }}" method="POST" enctype="multipart/form-data">
                                     @csrf

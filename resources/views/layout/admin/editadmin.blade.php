@@ -32,7 +32,7 @@
                             <div class="card-body">
 
                                 <center>
-                                    <h2>From Edit Admin</h2>
+                                    <h2>Form Edit Admin</h2>
                                 </center>
                                 <form action="{{ route('prosesEditAdmin', $admin->id_admin) }}" method="POST" enctype="multipart/form-data">
                                     @csrf

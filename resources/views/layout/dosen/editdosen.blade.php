@@ -32,7 +32,7 @@
                             <div class="card-body">
 
                                 <center>
-                                    <h2>From Edit Data Dosen</h2>
+                                    <h2>Form Edit Data Dosen</h2>
                                 </center>
                                 <form action="{{ route('prosesdosen', $dosen->id_dosen) }}" method="POST" enctype="multipart/form-data">
                                     @csrf

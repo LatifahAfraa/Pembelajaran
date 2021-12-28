@@ -32,7 +32,7 @@
                             <div class="card-body">
 
                                 <center>
-                                    <h2>From Tambah Kelas</h2>
+                                    <h2>Form Tambah Kelas</h2>
                                 </center>
                                 <form action="{{ route('tambahkelas') }}" method="POST" >
                                     @csrf
