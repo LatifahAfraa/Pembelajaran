@@ -15,14 +15,15 @@ class LoginController extends Controller
 
     public function proses(Request $request)
     {
-     $data=DB::table('admin')->where('nohp_admin', $request->nohp_admin)->get();
+     $data=DB::table('admin')->where('nohp_admin', $request->nohp_admin)->first();
 
-     if (count($data) == 1) {
-        if (Hash::check($request->password_admin, $data[0]->password_admin)) {
+     if ($data != null) {
+        if (Hash::check($request->password_admin, $data->password_admin)) {
 
             //buat session
-            $request->session()->put('id_admin', $data[0]->id_admin);
-            $request->session()->put('nohp_admin', $data[0]->nohp_admin);
+            $request->session()->put('id_admin', $data->id_admin);
+            $request->session()->put('nohp_admin', $data->nohp_admin);
+            $request->session()->put('nama', $data->nama);
 
             return redirect()->route('dashboard');
         } else {
@@ -39,6 +40,7 @@ class LoginController extends Controller
     {
         $request->session()->forget('id_admin');
         $request->session()->forget('nohp_admin');
+        $request->session()->('nama');
         return redirect()->route('index');
     }
 
